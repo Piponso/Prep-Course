@@ -1,4 +1,10 @@
 
+    body{background-image: url("https://image.shutterstock.com/image-photo/big-blue-600w-438538876.jpg")}
+    /*body{background-repeat:no-repeat;}
+    /*body{background-position-x:center;}*/
+    /*body{background-position-y:center;}*/
+    body{background-size: cover;}
+    /*body{background-size: auto;}*/
 
     h1{color:chartreuse}
     #thirdDiv{
