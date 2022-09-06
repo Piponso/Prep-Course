@@ -38,11 +38,17 @@ function forEach(array, cb) {
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
   var resultado= array.forEach(function(elemento){
-    return elemento;
+    cb (elemento);
   })
+//  let i;
+ // let resultado;
+  //for (i=0;i<=array.length-1;i++){
+   // cb (array[i]);
+  //}
+  
   /// el resultado me esta tirando un undefined como ultimo elemento y no se por que lo hace.
   
-  cb(resultado);
+  
 }
 
 function map(array, cb) {
