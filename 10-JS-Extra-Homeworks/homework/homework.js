@@ -12,7 +12,6 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
-  
   let llaves=Object.keys(objeto);
   let valores=Object.values(objeto);
   let i;
@@ -22,20 +21,28 @@ function deObjetoAmatriz(objeto){
   }
   return(resultado);
 }
-
+/* otra resolucion...
+}
+let res = []
+  for (const prop in objeto) {
+    res.push([prop, objeto[prop]])
+  }
+  return res
+}
+*/
 
 function numberOfCharacters(string) {
   //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece 
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+ 
   let i;
   let l;
   let cont;
   letrasenstring=[];
   resultado={}
   letras=[];
-  //sktpwrroqstkrpwwsqtqopwktsd
   for(i=0;i<=string.length-1;i++){
     cont=1;
     for(l=i+1;l<=string.length-1;l++){
@@ -63,13 +70,23 @@ function numberOfCharacters(string) {
   return(resultado);
 
 }
+/* otra resolucion...
+ let res = {}
+  string.split('').forEach(element => {
+    res[element] = (res[element] || 0) + 1
+  })
 
+  return res
+
+}
+*/
 
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+
   let i;
   let mayusculas='';
   let minusculas='';
@@ -86,7 +103,27 @@ function capToFront(s) {
   return (valoraretornar);
 
 }
+/* otra resolucion ....
+  let upp = []
+  let low = []
 
+  const arr = s.split('')
+
+  arr.forEach((element) => {
+    if (element >= "A" && element <= "Z") {
+      upp.push(element)
+    } else {
+      low.push(element)
+    }
+  })
+  
+
+  let str = upp.join('') + low.join('')
+
+  return str
+
+}
+*/
 
 function asAmirror(str) {
   //La función recibe una frase. 
@@ -94,6 +131,7 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  
   let palabras;
   let palabra;
   let oracion='';
@@ -111,8 +149,20 @@ function asAmirror(str) {
   }
   return(oracion);
 } 
+/* otra resolucion...
+let arr = str.split("")
+  let res = arr.reverse() 
 
+  res = res.join("")
 
+  arr = res.split(" ")
+  res = arr.reverse()
+  res = arr.join(" ")
+
+  return res
+
+}
+*/
 function capicua(numero){
   //Escribe una función, la cual recibe un número y determina si es o no capicúa.
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
@@ -129,12 +179,21 @@ function capicua(numero){
   }
   return(valoraretornar);
 }
+/* otra resolucion...
+let str = numero.toString()
+  let arr = str.split("")
+  let reverseNumber = arr.reverse() 
+  reverseNumber = reverseNumber.join("")
 
+  if (numero == reverseNumber) return "Es capicua"
+
+  return "No es capicua"
+
+}*/
 function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
-  
   let nuevacadena='';
   
   for(var p=0;p<=cadena.length-1;p++){
@@ -146,7 +205,11 @@ function deleteAbc(cadena){
   }
   return(nuevacadena);
 }
-
+/* otra resolucion
+let resultado=cadena.replace(/[aAbBcC]/g,'');
+  return(resultado);
+}
+*/
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
@@ -183,7 +246,10 @@ function sortArray(arr) {
   }
   return(valoraretornar);
 }
-
+/* otra resolucion...
+ return arr.sort((a,b) => a.length - b.length)
+}
+*/
 
 function buscoInterseccion(arreglo1, arreglo2){
   //Existen dos arrays, cada uno con 5 números. A partir de ello, escribir una función que permita 
@@ -191,7 +257,7 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí
-  let valoraretornar=[];
+  /*let valoraretornar=[];
   for(var a1=0;a1<arreglo1.length;a1++){
     for(var a2=0;a2<arreglo2.length;a2++){
       if(arreglo1[a1]==arreglo2[a2]){
@@ -200,11 +266,15 @@ function buscoInterseccion(arreglo1, arreglo2){
     }
   }
   return(valoraretornar);
-  
-    
-    
-}
+  */
+  const res = arreglo2.filter(element => {
+    return arreglo1.indexOf(element) != -1
+  })
 
+  return res
+
+}
+    
 
 
 // No modificar nada debajo de esta línea
